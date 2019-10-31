@@ -6,6 +6,8 @@
     "dev": "vue-cli-service serve",
     "pre": "vue-cli-service build --mode pre",
     "build": "vue-cli-service build",
+    "sl": "stylelint 'src/**/*.vue' 'src/**/*.scss'",
+    "sl-f": "stylelint 'src/**/*.vue' 'src/**/*.scss' --fix",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
@@ -27,6 +29,10 @@
     "eslint-plugin-vue": "^5.0.0",
     "sass": "^1.19.0",
     "sass-loader": "^8.0.0",
+    "stylelint": "^11.1.1",
+    "stylelint-config-recess-order": "^2.0.3",
+    "stylelint-config-standard": "^19.0.0",
+    "stylelint-order": "^3.1.1",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "vue-cli-plugin-element": "^1.0.1",
     "vue-template-compiler": "^2.6.10"

@@ -22,8 +22,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-.component-hello{
-}
-</style>

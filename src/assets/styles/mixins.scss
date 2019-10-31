@@ -3,28 +3,30 @@
 /* flex-center */
 @mixin flex-center($direction: row) {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: $direction;
+  align-items: center;
+  justify-content: center;
 }
+
 /* 水平居中 */
 @mixin flex-center-x() {
   display: flex;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
 }
+
 /* 垂直居中 */
-@mixin  flex-center-y() {
+@mixin flex-center-y() {
   display: flex;
-  justify-content: center;
   flex-direction: row;
+  justify-content: center;
 }
 
 /* flex-between */
 @mixin flex-between() {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
 /* ellipsis */
@@ -36,18 +38,19 @@
 
 /* multi line ellipsis */
 @mixin multiline-ellipsis($num: 2) {
+  display: -webkit-box;
   overflow: hidden;
   text-overflow: ellipsis;
-  display: -webkit-box;
+  word-wrap: break-word;
+  white-space: normal !important;
   -webkit-line-clamp: $num;
   -webkit-box-orient: vertical;
-  white-space: normal !important;
-  word-wrap: break-word;
 }
 
 @mixin circle($width) {
   width: $width;
   height: $width;
   border-radius: 50%;
+
   @include flex-center();
 }

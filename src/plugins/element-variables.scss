@@ -1,7 +1,7 @@
 /* 改变主题色变量 */
-$--color-white: #ffffff;
+$--color-white: #fff;
 $--color-primary: teal;
-$--color-primary: #409EFF !default;
+$--color-primary: #409eff !default;
 $--color-primary-light-1: mix($--color-white, $--color-primary, 10%) !default; /* 53a8ff */
 $--color-primary-light-2: mix($--color-white, $--color-primary, 20%) !default; /* 66b1ff */
 $--color-primary-light-3: mix($--color-white, $--color-primary, 30%) !default; /* 79bbff */
