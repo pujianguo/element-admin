@@ -1,10 +1,8 @@
 import dateFormat from 'dateformat'
+import { formatMoney } from '@/utils/func'
 import * as constDatas from './const'
 
 let filters = {
-  year: t => {
-    return t ? dateFormat(t, 'yyyy') : ''
-  },
   month: t => {
     return t ? dateFormat(t, 'yyyy-mm') : ''
   },
@@ -23,6 +21,10 @@ let filters = {
   },
   sex: val => {
     return val === 1 ? '男' : val === 0 ? '女' : '未知'
+  },
+
+  formatMoney: val => {
+    return formatMoney(val)
   }
 }
 

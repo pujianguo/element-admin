@@ -1,14 +1,14 @@
 import axios from 'axios'
 import { Notification } from 'element-ui'
 import storage from '@/utils/storage'
-import { baseUrl } from './config'
+import config from './config'
 
 // 防止ie缓存
 if (navigator.userAgent.indexOf('MSIE 9') > -1) {
   axios.defaults.headers.common['If-Modified-Since'] = '0'
 }
 
-axios.defaults.baseURL = baseUrl
+axios.defaults.baseURL = config.baseUrl
 axios.defaults.timeout = 10000
 axios.defaults.headers = { 'Content-Type': 'application/json' }
 

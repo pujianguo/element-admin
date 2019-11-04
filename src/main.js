@@ -5,7 +5,7 @@ import store from './store'
 import filter from './filter'
 import directive from './directive'
 import globalComponent from './components/common/global'
-import config from './utils/config'
+import config from './api/config'
 import func from './utils/func'
 
 import './plugins/element.js'
