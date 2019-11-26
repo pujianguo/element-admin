@@ -1,3 +1,30 @@
+import dateFormat from 'dateformat'
+
+/** *************** 时间相关 *************** **/
+export const formatMonth = t => {
+  return t ? dateFormat(t, 'yyyy-mm') : ''
+}
+export const formatDate = t => {
+  return t ? dateFormat(t, 'yyyy-mm-dd') : ''
+}
+export const formatMinute = t => {
+  return t ? dateFormat(t, 'yyyy-mm-dd HH:MM') : ''
+}
+export const formatSecond = t => {
+  return t ? dateFormat(t, 'yyyy-mm-dd HH:MM:ss') : ''
+}
+// 获取最近n天时间, 负数是后几天，正数是前几天
+export const getRecentDate = (n, t) => {
+  let now = t ? (new Date(t)) : new Date()
+  now.setDate(now.getDate() + n)
+  return dateFormat(now, 'yyyy-mm-dd') // TODO: 这个格式是element组件需要的格式
+}
+// 提交时，转换后端时间
+export const getSubmitTime = time => {
+  time = time || new Date()
+  return dateFormat(time, 'isoDateTime').replace('+0800', '+08:00')
+}
+
 export const copy = data => {
   return JSON.parse(JSON.stringify(data))
 }
@@ -50,7 +77,13 @@ export const formatMoney = value => {
   }
   return value
 }
+export const sum = (arr, key) => {
+  return arr.reduce((prev, cur) => {
+    return parseFloat(prev + parseFloat(cur[key]))
+  }, 0)
+}
 
+// 只绑定需要在vue页面用到的
 export default {
   install (Vue) {
     Vue.prototype.func = {

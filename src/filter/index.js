@@ -1,20 +1,13 @@
-import dateFormat from 'dateformat'
-import { formatMoney } from '@/utils/func'
+import { formatMoney,
+  formatMonth, formatDate, formatMinute, formatSecond
+} from '@/utils/func'
 import * as constDatas from './const'
 
 let filters = {
-  month: t => {
-    return t ? dateFormat(t, 'yyyy-mm') : ''
-  },
-  date: t => {
-    return t ? dateFormat(t, 'yyyy-mm-dd') : ''
-  },
-  minute: t => {
-    return t ? dateFormat(t, 'yyyy-mm-dd HH:MM') : ''
-  },
-  second: t => {
-    return t ? dateFormat(t, 'yyyy-mm-dd HH:MM:ss') : ''
-  },
+  month: t => formatMonth(t),
+  date: t => formatDate(t),
+  minute: t => formatMinute(t),
+  second: t => formatSecond(t),
 
   is: val => {
     return val ? '是' : '否'
