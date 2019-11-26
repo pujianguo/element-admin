@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import Storage from '@/utils/storage'
 
 const modules = {}
 const requireModules = require.context('./modules/', true, /\.js$/)
@@ -13,8 +14,17 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    menuCollapse: false,
+    fullLoading: false
   },
   mutations: {
+    setMenuCollapse (state, payload) {
+      Storage.setMenuCollapse(payload)
+      state.menuCollapse = payload
+    },
+    setFullLoading (state, payload) {
+      state.fullLoading = payload
+    }
   },
   actions: {
   },

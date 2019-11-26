@@ -1,4 +1,4 @@
-import { formatMoney,
+import { formatDecimals,
   formatMonth, formatDate, formatMinute, formatSecond
 } from '@/utils/func'
 import * as constDatas from './const'
@@ -17,7 +17,7 @@ let filters = {
   },
 
   formatMoney: val => {
-    return formatMoney(val)
+    return formatDecimals(val)
   }
 }
 

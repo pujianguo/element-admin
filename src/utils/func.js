@@ -64,18 +64,17 @@ export const formatInt = value => {
   }
   return value
 }
+// 保留小数位数，结果为字符串
+export const formatDecimals = (value, decimals = 2) => {
+  value = parseFloat(value)
+  if (Number.isNaN(value)) {
+    value = 0
+  }
+  return value.toFixed(decimals)
+}
 // js保留两位小数，自动补充零, 补0后转换成了字符串
 export const formatMoney = value => {
-  value = formatFloat(value)
-  let decimals = value.toString().split('.')[1]
-  if (decimals) {
-    if (decimals.length === 1) {
-      value = value + '0'
-    }
-  } else {
-    value = value + '.00'
-  }
-  return value
+  return formatDecimals(value)
 }
 export const sum = (arr, key) => {
   return arr.reduce((prev, cur) => {

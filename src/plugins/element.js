@@ -78,7 +78,7 @@ import {
   Message,
   Notification
 } from 'element-ui'
-import './element-variables.scss'
+import 'styles/element-variables.scss'
 
 Vue.prototype.$ELEMENT = { size: 'small', zIndex: 3000 }
 

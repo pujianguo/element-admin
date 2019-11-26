@@ -1,31 +1,53 @@
 <template>
-  <div id="app">
-      <input v-model="data1" v-focus />
-    <hello></hello>
+  <div id="app" v-loading="fullLoading">
+    <router-view v-if="!fullLoading"></router-view>
   </div>
 </template>
 
 <script>
+import Storage from '@/utils/storage'
+
 export default {
   name: 'app',
   components: {
   },
-  data () {
-    return {
-      data1: ''
+  computed: {
+    fullLoading () {
+      return this.$store.state.fullLoading
     }
+  },
+  methods: {
+    init () {
+      // init menuCollapse
+      let menuCollapse = Storage.getMenuCollapse()
+      if (menuCollapse !== null) {
+        // 注意：storage里面存放的是字符串，这里需要转换
+        this.$store.commit('setMenuCollapse', menuCollapse === 'true')
+      }
+
+      // 模拟加载数据
+      // this.$store.commit('setFullLoading', true)
+      // setTimeout(() => {
+      //   this.$store.commit('setFullLoading', false)
+      // }, 3000)
+
+      // 获取数据资源
+      // let apis = [
+      //   api.listClusters()
+      // ]
+      // this.$store.commit('setFullLoading', true)
+      // Promise.all(apis).then(res => {
+      //   let [clusterList] = res
+      //   this.dealClusterList(clusterList)
+      //   this.$store.commit('setFullLoading', false)
+      // }).catch(() => {
+      //   // 获取初始资源数据失败
+      //   this.$store.commit('setFullLoading', false)
+      // })
+    }
+  },
+  created () {
+    this.init()
   }
 }
 </script>
-<style lang="scss">
-#app {
-  margin-top: 60px;
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  color: #2c3e50;
-  text-align: center;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  @include flex-center(column);
-}
-</style>
