@@ -4,6 +4,7 @@
       <i class="fa fa-bell-o" aria-hidden="true"></i>
       <div class="count" v-show="messageList.length"></div>
     </div>
+    <div class="message-panael-top" v-show="messageIsBlock"></div>
     <div :class="['message-panel', {'message-panel_show': messageIsBlock}]">
       <div class="message-panel-header fx-flex-between" @click.stop="goMessageList()">
         <span class="left">
@@ -12,14 +13,13 @@
         <span class="fx-link">查看全部</span>
       </div>
       <div class="message-panel-list">
-        <ul>
-          <template v-for="(mess, i) in messageList" >
-            <li :key="i" @click.stop="goMessageDetail(mess.id)">
-                <div class="title"> {{mess.msg}}</div>
-                <div class="date">{{mess.created | date}}</div>
-            </li>
-          </template>
-        </ul>
+        <template v-for="(mess, i) in messageList" >
+          <li :key="i" @click.stop="goMessageDetail(mess.id)">
+              <div class="title"> {{mess.msg}}</div>
+              <div class="date">{{mess.created | date}}</div>
+          </li>
+        </template>
+        <no-data v-if="!messageList.length" noImage></no-data>
       </div>
     </div>
   </div>
@@ -71,31 +71,38 @@ export default {
       background: red;
     }
   }
-  .message-panel{
-    height: 0;
+  .message-panael-top{
     position: absolute;
+    top: 50px;
     right: 0;
-    top: 58px;
     width: 300px;
-    z-index: 500;
-    transition: all 1s;
-    opacity: 0;
-    margin: 5px 0;
-    background-color: #fff;
-    border: 1px solid #EBEEF5;
-    border-radius: 4px;
-    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+    height: 12px;
+    z-index: 501;
     &:before{
       content: ' ';
       position: absolute;
-      top: 58px;
-      right: 3px;
+      bottom: -1px;
+      right: 13px;
       width: 0;
       height: 0;
       border-left: 5px solid transparent;
       border-right: 5px solid transparent;
       border-bottom: 6px solid #fff;
     }
+  }
+  .message-panel{
+    height: 0;
+    width: 300px;
+    position: absolute;
+    right: 0;
+    top: 62px;
+    z-index: 500;
+    transition: opacity 1s;
+    opacity: 0;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+    overflow: hidden;
     .message-panel-header{
       height: 40px;
       // background-color: #eaedf1;
@@ -146,6 +153,7 @@ export default {
     }
   }
   .message-panel_show{
+    border: 1px solid #EBEEF5;
     height: auto;
     opacity: 1;
   }
