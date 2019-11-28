@@ -10,19 +10,6 @@
     <div class="header-right">
       <full-screen class="nav-item" v-model="isFullscreen" @on-change="fullscreenChange"></full-screen>
       <message class="nav-item"></message>
-      <!-- <el-dropdown class="nav-item" @command="clickDropdown">
-        <div class="message">
-          <i class="fa fa-bell-o" aria-hidden="true"></i>
-          <div class="count" v-show="messageList.length"></div>
-        </div>
-        <el-dropdown-menu class="my-dropdown" slot="dropdown">
-          <div class="message-dropdown-title"></div>
-          <div class="message-dropdown-list">
-            <div class="message-dropdown-item" v-for="(item, index) in messageList" :key="index">{{item.msg}}</div>
-          </div>
-        </el-dropdown-menu>
-      </el-dropdown> -->
-
       <el-dropdown class="nav-item" @command="clickDropdown">
         <div class="userinfo">
           <div class="userinfo-name">{{userInfo.name}}</div>
@@ -55,8 +42,7 @@ export default {
       userInfo: {
         name: '王大锤',
         avatar: this.config.defaultAvatar
-      },
-      messageList: []
+      }
     }
   },
   computed: {
@@ -99,11 +85,6 @@ export default {
   created () {
   },
   mounted () {
-    let list = []
-    for (let i = 1; i < 20; i++) {
-      list.push({ id: i, msg: `我是第${i}条数据` })
-    }
-    this.messageList = list
   }
 }
 </script>

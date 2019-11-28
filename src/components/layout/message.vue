@@ -88,8 +88,8 @@ export default {
     &:before{
       content: ' ';
       position: absolute;
-      top: -6px;
-      right: 13px;
+      top: 58px;
+      right: 3px;
       width: 0;
       height: 0;
       border-left: 5px solid transparent;
