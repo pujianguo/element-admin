@@ -1,15 +1,20 @@
 <template>
-  <div class="component-flex-page form-base">
-    表单
+  <div class="component-flex-page form-upload">
+    <div class="wrapper">
+      <upload></upload>
+    </div>
   </div>
 </template>
 
 <script>
+import Upload from '@/components/upload'
+
 export default {
-  name: 'form-base',
+  name: 'form-upload',
   props: {
   },
   components: {
+    Upload
   },
   data () {
     return {
@@ -29,6 +34,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.form-base{
+@import '~styles/mixins.scss';
+.form-upload{
+  .wrapper{
+    width: 500px;
+  }
 }
 </style>

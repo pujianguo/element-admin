@@ -12,6 +12,22 @@ export default [
       {
         name: 'BaseForm',
         title: '基础表单'
+      },
+      {
+        name: 'Markdown',
+        title: 'MarkDown'
+      },
+      {
+        name: 'Editfrom',
+        title: '编辑器'
+      },
+      {
+        name: 'Codemirror',
+        title: 'Codemirror'
+      },
+      {
+        name: 'Upload',
+        title: 'Upload'
       }
     ]
   },
@@ -23,6 +39,27 @@ export default [
       {
         name: 'User',
         title: '用户'
+      },
+      {
+        name: 'Gailan',
+        title: '概览'
+      },
+
+      {
+        name: 'Pdf',
+        title: 'PDF'
+      },
+      {
+        name: 'Info',
+        title: '个人信息'
+      },
+      {
+        name: 'Echarts',
+        title: 'Echarts'
+      },
+      {
+        name: 'Scroll',
+        title: '滚动定位'
       },
       {
         name: 'Transition',

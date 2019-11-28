@@ -24,11 +24,42 @@ export default {
       component: () => import('@/views/template/gailan/index'),
       meta: { title: '概览', firstPageName: false }
     },
+
+    {
+      path: 'pdf',
+      component: () => import('@/views/template/pdf/index'),
+      meta: { title: 'PDF', firstPageName: 'Pdf' },
+      children: [
+        { path: '', name: 'Pdf', component: () => import('@/views/template/pdf/first'), meta: { title: 'PDF', isfirstPage: true } },
+        { path: 'object', name: 'Pdf_Object', component: () => import('@/views/template/pdf/object'), meta: { title: 'object展示' } },
+        { path: 'apione', name: 'Pdf_Apione', component: () => import('@/views/template/pdf/apiOne'), meta: { title: '分页显示' } },
+        { path: 'apitask', name: 'Pdf_Apitask', component: () => import('@/views/template/pdf/apiOne'), meta: { title: 'createLoadingTask' } },
+        { path: 'apiall', name: 'Pdf_Apiall', component: () => import('@/views/template/pdf/apiAll'), meta: { title: '显示所有' } }
+      ]
+    },
+    {
+      path: 'info',
+      name: 'Info', // 这里没有子组件，直接是一个页面
+      component: () => import('@/views/template/info/index'),
+      meta: { title: '个人信息', firstPageName: false }
+    },
+    {
+      path: 'echarts',
+      name: 'Echarts', // 这里没有子组件，直接是一个页面
+      component: () => import('@/views/template/echarts/index'),
+      meta: { title: 'Echarts', firstPageName: false }
+    },
+    {
+      path: 'scroll',
+      name: 'Scroll',
+      component: () => import('@/views/template/scroll/index'),
+      meta: { title: '滚动定位', firstPageName: false }
+    },
     {
       path: 'transition',
+      name: 'Transition',
       component: () => import('@/views/template/transition/index'),
       meta: { title: '动画切换', firstPageName: false },
-      name: 'Transition',
       redirect: 'transition/a',
       children: [
         {
