@@ -1,5 +1,5 @@
 <template>
-  <div @click="handleChange" v-if="showFullScreenBtn" class="full-screen-btn-con">
+  <div @click="handleChange" v-if="showFullScreenBtn" class="full-screen-btn">
       <el-tooltip effect="dark" :content="value ? '退出全屏' : '全屏'" placement="bottom">
         <i :class="['iconfont', value ? 'icon-contract' : 'icon-full']"></i>
       </el-tooltip>
@@ -73,7 +73,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.full-screen-btn-con{
+.full-screen-btn{
   text-align: center;
   .iconfont{
     cursor: pointer;

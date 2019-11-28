@@ -51,6 +51,6 @@
   width: $width;
   height: $width;
   border-radius: 50%;
-
+  overflow: hidden;
   @include flex-center();
 }

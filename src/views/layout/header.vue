@@ -8,12 +8,26 @@
       </div>
     </div>
     <div class="header-right">
-      <full-screen class="full-screen-btn" v-model="isFullscreen" @on-change="fullscreenChange"></full-screen>
-      <el-dropdown @command="clickDropdown">
+      <full-screen class="nav-item" v-model="isFullscreen" @on-change="fullscreenChange"></full-screen>
+      <message class="nav-item"></message>
+      <!-- <el-dropdown class="nav-item" @command="clickDropdown">
+        <div class="message">
+          <i class="fa fa-bell-o" aria-hidden="true"></i>
+          <div class="count" v-show="messageList.length"></div>
+        </div>
+        <el-dropdown-menu class="my-dropdown" slot="dropdown">
+          <div class="message-dropdown-title"></div>
+          <div class="message-dropdown-list">
+            <div class="message-dropdown-item" v-for="(item, index) in messageList" :key="index">{{item.msg}}</div>
+          </div>
+        </el-dropdown-menu>
+      </el-dropdown> -->
+
+      <el-dropdown class="nav-item" @command="clickDropdown">
         <div class="userinfo">
-          <div class="userinfo-name">{{name}}</div>
+          <div class="userinfo-name">{{userInfo.name}}</div>
           <div class="userinfo-avatar">
-            <img :src='userImg'/>
+            <img :src="userInfo.avatar" />
           </div>
           <div class="userinfo-icon"><i class="el-icon-arrow-down el-icon--right"></i></div>
         </div>
@@ -27,20 +41,22 @@
 </template>
 
 <script>
-import FullScreen from '@/components/layout/fullscreen.vue'
+import FullScreen from '@/components/layout/fullscreen'
+import Message from 'components/layout/message'
 import Storage from '@/utils/storage'
 export default {
   name: 'layout-header',
   props: {
   },
-  components: {
-    FullScreen
-  },
+  components: { FullScreen, Message },
   data () {
     return {
-      name: '王大锤',
       isFullscreen: false,
-      userImg: this.config.defaultAvatar
+      userInfo: {
+        name: '王大锤',
+        avatar: this.config.defaultAvatar
+      },
+      messageList: []
     }
   },
   computed: {
@@ -83,12 +99,16 @@ export default {
   created () {
   },
   mounted () {
-    console.log('config', this.config)
+    let list = []
+    for (let i = 1; i < 20; i++) {
+      list.push({ id: i, msg: `我是第${i}条数据` })
+    }
+    this.messageList = list
   }
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 
 .layout-header {
   display: flex;
@@ -122,25 +142,60 @@ export default {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    .full-screen-btn{
-      width: 40px;
+    .nav-item{
+      padding: 0 10px;
+      height: 50px;
+      @include flex-center();
+      cursor: pointer;
+      &:hover{
+        color: $--color-primary;
+      }
     }
     .userinfo{
-      padding: 0 20px;
       display: flex;
       align-items: center;
       cursor: pointer;
+      &-name{
+        max-width: 100px;
+        @include ellipsis();
+      }
       .userinfo-avatar{
         margin-left: 5px;
-        width: 32px;
-        height: 32px;
-        border-radius: 16px;
-        overflow: hidden;
+        // width: 28px;
+        // height: 28px;
+        // border-radius: 14px;
+        // overflow: hidden;
+        @include circle(28px);
         img{
-          width: 32px;
-          height: 32px;
+          width: 28px;
+          height: 28px;
         }
       }
+    }
+    .message{
+      height: 50px;
+      @include flex-center();
+      position: relative;
+      .count{
+        position: absolute;
+        top: 16px;
+        right: -1px;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: red;
+      }
+    }
+    .my-dropdown{
+      top: 50px !important;
+    }
+    .dropdown-message{
+      // position: absolute;
+      // top: 40px;
+      // left: -50px;
+      // width: 300px;
+      // height: 500px;
+      // background: #333;
     }
 
   }

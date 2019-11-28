@@ -1,0 +1,17 @@
+@import '~styles/mixins.scss';
+
+.fx-flex-between{
+  @include flex-between();
+}
+
+.fx-flex-center{
+  @include flex-center();
+}
+
+.fx-link{
+  color: #0366d6;
+  cursor: pointer;
+  &:hover{
+    text-decoration: underline
+  }
+}
