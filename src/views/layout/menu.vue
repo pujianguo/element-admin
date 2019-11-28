@@ -126,14 +126,14 @@ export default {
         background-color: $menu-level-1-bgc;
         font-weight: bold;
         .icon-wrapper i{
-          color: $--color-primary;
+          color: $color-primary;
         }
         .text{
-          color: $--color-primary;
+          color: $color-primary;
         }
       }
       &.is-active{
-        background-color: $--color-primary;
+        background-color: $color-primary;
         .icon-wrapper i{
           color: $menu-level-2-active-c ;
         }
@@ -214,14 +214,14 @@ export default {
         &:hover{
           font-weight: bold;
           .icon-wrapper i{
-            color: $--color-primary;
+            color: $color-primary;
           }
           .text{
-            color: $--color-primary;
+            color: $color-primary;
           }
         }
         &.is-active{
-          background-color: $--color-primary;
+          background-color: $color-primary;
           .icon-wrapper i{
             color: $menu-level-2-active-c ;
           }
@@ -248,14 +248,14 @@ export default {
         &:hover{
           font-weight: bold;
           .icon-wrapper i{
-            color: $--color-primary;
+            color: $color-primary;
           }
           .text{
-            color: $--color-primary;
+            color: $color-primary;
           }
         }
         &.is-active{
-          background-color: $--color-primary;
+          background-color: $color-primary;
           .icon-wrapper i{
             color: $menu-level-2-active-c ;
           }

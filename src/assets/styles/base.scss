@@ -19,7 +19,7 @@ html{
   font-size: 16px;
 }
 
-// 重新定义 breadcrumb 样式
+/* *************** breadcrumb *************** */
 $breadcrumb-margin-top: 5px;
 .el-breadcrumb{
   height: $breadcrumb-height - $breadcrumb-margin-top * 2;
@@ -27,7 +27,7 @@ $breadcrumb-margin-top: 5px;
   margin-top: $breadcrumb-margin-top;
 }
 
-// dialog
+/* *************** dialog *************** */
 .el-dialog{
   box-shadow: 0 0 55px 4px $dialog-sc;
   .el-dialog__header{
@@ -57,13 +57,13 @@ $breadcrumb-margin-top: 5px;
 }
 
 
-// 分页
+/* *************** 分页 *************** */
 .el-pager li.active {
   color: #fff;
-  background: $--color-primary;
+  background: $color-primary;
 }
 
-// table
+/* *************** table *************** */
 .el-table .el-table__header-wrapper .el-table__header{
   tr th{
     background-color: #e4ebec;
@@ -78,7 +78,7 @@ $breadcrumb-margin-top: 5px;
   padding: 0 !important;
 }
 
-// form
+/* *************** form *************** */
 .el-form-item__label{
   font-weight: bold;
 }
@@ -86,15 +86,15 @@ $breadcrumb-margin-top: 5px;
   margin-top: 30px;
 }
 
-// loading
+/* *************** loading *************** */
 .empty-page{
   flex: 1;
   @include flex-center();
 }
 
-// nprogress 颜色
+/* *************** nprogress *************** */
 #nprogress .bar{
-  background: $--color-primary;
+  background: $color-primary;
 }
 
 

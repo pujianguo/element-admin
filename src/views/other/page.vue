@@ -18,7 +18,6 @@ export default {
 }
 </script>
 <style lang="scss">
-@import '~styles/mixins.scss';
 .page{
   box-sizing: border-box;
   width: 100%;

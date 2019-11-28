@@ -28,8 +28,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-@import '~styles/mixins.scss';
+<style lang="scss">
 .register{
 }
 </style>

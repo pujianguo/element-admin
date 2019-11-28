@@ -182,7 +182,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import '~styles/mixins.scss';
 .login{
   width: 100%;
   height: 100%;
@@ -244,7 +243,7 @@ export default {
         cursor: default;
       }
       .validate-text-get{
-        color: $--color-primary;
+        color: $color-primary;
         cursor: pointer;
         &:hover{
           font-weight: bold;

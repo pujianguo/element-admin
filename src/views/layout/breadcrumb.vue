@@ -35,6 +35,8 @@ export default {
   methods: {
     changeMenu () {
       let menu = []
+      console.log('this.menu', this.menu)
+
       this.menu.forEach((x, i) => {
         if (x.path && x.path !== '/' && !x.meta.isfirstPage) {
           let name = x.name
@@ -52,6 +54,7 @@ export default {
         menu[menu.length - 1].isLast = true
         menu[menu.length - 1].disabled = true
       }
+      console.log('menu', menu)
       this.menuList = menu
     }
   },
@@ -64,10 +67,9 @@ export default {
 </script>
 
 <style lang="scss">
-@import '~styles/mixins.scss';
 .layout-breadcrumb{
   .is-last{
-    background-color: $--color-primary;
+    background-color: $color-primary;
     padding: 0 20px;
     .el-breadcrumb__inner{
       color: #fff !important;

@@ -1,5 +1,5 @@
 <template>
-  <div class="noaccess">
+  <div class="not-access">
     您没有权限
   </div>
 </template>
@@ -28,8 +28,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-@import '~styles/mixins.scss';
-.noaccess{
+<style lang="scss">
+.not-access{
 }
 </style>

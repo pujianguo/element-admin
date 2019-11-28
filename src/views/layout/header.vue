@@ -105,7 +105,7 @@ export default {
       &:hover{
         background: #eee;
         .iconfont{
-          color: $--color-primary;
+          color: $color-primary;
         }
       }
       .icon{
@@ -129,7 +129,7 @@ export default {
       @include flex-center();
       cursor: pointer;
       &:hover{
-        color: $--color-primary;
+        color: $color-primary;
       }
     }
     .userinfo{

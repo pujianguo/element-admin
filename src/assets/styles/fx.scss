@@ -9,7 +9,7 @@
 }
 
 .fx-link{
-  color: #0366d6;
+  color: $color-link;
   cursor: pointer;
   &:hover{
     text-decoration: underline

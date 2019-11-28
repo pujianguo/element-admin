@@ -1,6 +1,26 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+
+import Layout from '@/views/layout'
+
+export const otherRouter = [
+  {
+    path: '/login',
+    name: 'Login',
+    component: () => import('@/views/other/login')
+  },
+  {
+    path: '/register',
+    name: 'Register',
+    component: () => import('@/views/other/register')
+  },
+  {
+    path: '/notaccess',
+    name: 'NoTAccess',
+    component: () => import('@/views/other/notAccess')
+  }
+
+]
 
 const routerList = []
 function importAll (r) {
@@ -10,23 +30,29 @@ function importAll (r) {
 }
 importAll(require.context('./modules', true, /\.js/))
 
+export const appRouter = {
+  path: '/',
+  component: Layout,
+  children: [
+    {
+      path: '',
+      name: 'Home',
+      component: () => import('@/views/home/index')
+    },
+    ...routerList,
+    {
+      path: '*',
+      name: 'notfound',
+      component: () => import('@/views/other/notFound')
+    }
+  ]
+}
+
 Vue.use(VueRouter)
 
 const routes = [
-  {
-    path: '/',
-    name: 'home',
-    component: Home
-  },
-  {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  },
-  ...routerList
+  ...otherRouter,
+  appRouter
 ]
 
 const router = new VueRouter({
