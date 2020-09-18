@@ -33,7 +33,7 @@ export default {
         { path: '', name: 'Pdf', component: () => import('@/views/template/pdf/first'), meta: { title: 'PDF', isfirstPage: true } },
         { path: 'object', name: 'Pdf_Object', component: () => import('@/views/template/pdf/object'), meta: { title: 'object展示' } },
         { path: 'apione', name: 'Pdf_Apione', component: () => import('@/views/template/pdf/apiOne'), meta: { title: '分页显示' } },
-        { path: 'apitask', name: 'Pdf_Apitask', component: () => import('@/views/template/pdf/apiOne'), meta: { title: 'createLoadingTask' } },
+        { path: 'apitask', name: 'Pdf_Apitask', component: () => import('@/views/template/pdf/apiTask'), meta: { title: 'createLoadingTask' } },
         { path: 'apiall', name: 'Pdf_Apiall', component: () => import('@/views/template/pdf/apiAll'), meta: { title: '显示所有' } }
       ]
     },

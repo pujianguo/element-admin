@@ -41,7 +41,7 @@ export default {
   data () {
     return {
       pdfUrl: null,
-      url: 'https://cdn.qlippie.com/pdf/Egame_Brandbook.pdf',
+      url: 'http://file.gp58.com/file/2018-11-14/111405.pdf',
       pageNum: 1,
       pageNums: 1,
       pageRotate: 0,
@@ -55,6 +55,7 @@ export default {
     initPdf () {
       // 可以将认证信息放在请求头
       let headers = {
+        token: 'xxx'
       }
       let loadingTask = pdf.createLoadingTask({
         url: this.url,

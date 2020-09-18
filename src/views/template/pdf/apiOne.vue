@@ -41,7 +41,7 @@ export default {
   },
   data () {
     return {
-      pdfUrl: 'https://cdn.qlippie.com/pdf/Egame_Brandbook.pdf',
+      pdfUrl: 'http://file.gp58.com/file/2018-11-14/111405.pdf',
       pageNum: 1,
       pageNums: 1,
       pageRotate: 0,
